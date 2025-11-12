@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestAlgebra",
+            "request": "launch",
+            "mainClass": "TestAlgebra",
+            "projectName": "hw3-NoaMokady_48ac5eac"
+        },
+        {
+            "type": "java",
             "name": "Anagram",
             "request": "launch",
             "mainClass": "Anagram",
@@ -24,8 +31,8 @@
             "mainClass": "LoanCalc",
             "args": [
                 100000,
-                5,
-                10
+                3,
+                12
             ]
         }
     ]

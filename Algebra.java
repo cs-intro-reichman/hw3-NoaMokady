@@ -23,8 +23,20 @@ public class Algebra {
 		System.out.println(sqrt(76123));
 	}
 
+	// Returns the absolute value of x
+	public static int abs(int x) {
+		if (x < 0) {
+			return -x;
+		}
+		return x;
+	}
+
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
+		if (x2 < 0) {
+			return minus(x1, abs(x2));
+		}
+
 		for (int i = 0; i < x2; i++) {
 			x1++;
 		}
@@ -33,6 +45,10 @@ public class Algebra {
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
+		if (x2 < 0) {
+			return plus(x1, abs(x2));
+		}
+
 		for (int i = 0; i < x2; i++) {
 			x1--;
 		}
@@ -41,8 +57,12 @@ public class Algebra {
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
+		if (x2 < 0) {
+			x1 = -x1;
+		}
+
 		int result = 0;
-		for (int i = 0; i < x2; i++) {
+		for (int i = 0; i < abs(x2); i++) {
 			result = plus(result, x1);
 		}
 		return result;
@@ -50,6 +70,9 @@ public class Algebra {
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
+		if (n == 0) {
+			return 1;
+		}
 		int result = x;
 		for (int i = 0; i < n - 1; i++) {
 			result = times(result, x);
@@ -77,9 +100,7 @@ public class Algebra {
 
 	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
-		// double epsillon = 0.01;
 		int i = 1;
-		// while ((x - pow(i, 2)) > epsillon && i<=x) {
 		while (pow(i, 2) < x) {
 			i++;
 		}
