@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "java",
+            "name": "Anagram",
+            "request": "launch",
+            "mainClass": "Anagram",
+            "projectName": "hw3-NoaMokady_48ac5eac"
+        },
         {
             "type": "java",
             "name": "Current File",
@@ -16,7 +22,11 @@
             "name": "LoanCalc",
             "request": "launch",
             "mainClass": "LoanCalc",
-            "args": [100000, 5, 10]
-        },
+            "args": [
+                100000,
+                5,
+                10
+            ]
+        }
     ]
 }

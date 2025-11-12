@@ -49,9 +49,6 @@ public class LoanCalc {
 			g += epsilon;
 			iterationCounter ++;
 		}
-
-		System.out.println("my test: " + endBalance(loan, rate, n, g));
-
 		return g;
     }
     
@@ -75,9 +72,6 @@ public class LoanCalc {
 			g = (L + H) / 2;
 			iterationCounter ++;
 		}
-
-		System.out.println("my test: " + endBalance(loan, rate, n, g));
-
 		return g;
     }
 }
