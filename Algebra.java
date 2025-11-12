@@ -60,9 +60,9 @@ public class Algebra {
 	// Returns the integer part of x1 / x2
 	public static int div(int x1, int x2) {
 		int result = 0;
-		while (x1 >=x2 && x2 != 0) {
+		while (x1 >= x2 && x2 != 0) {
 			x1 = minus(x1, x2);
-			result ++;
+			result++;
 		}
 		return result;
 	}
@@ -81,8 +81,8 @@ public class Algebra {
 		int i = 1;
 		// while ((x - pow(i, 2)) > epsillon && i<=x) {
 		while (pow(i, 2) < x) {
-			i ++;
+			i++;
 		}
-		return i;
+		return i - 1;
 	}
 }
