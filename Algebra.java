@@ -82,12 +82,21 @@ public class Algebra {
 
 	// Returns the integer part of x1 / x2
 	public static int div(int x1, int x2) {
+		// Handles negative numbers by finding the result's negative or positive sign.
+		int sign = 1;
+		if (times(x1, x2) < 0) {
+			sign = -1;
+		}
+
+		x1 = abs(x1);
+		x2 = abs(x2);
+
 		int result = 0;
 		while (x1 >= x2 && x2 != 0) {
 			x1 = minus(x1, x2);
 			result++;
 		}
-		return result;
+		return result * sign;
 	}
 
 	// Returns x1 % x2
@@ -104,6 +113,12 @@ public class Algebra {
 		while (pow(i, 2) < x) {
 			i++;
 		}
-		return i - 1;
+
+		// Removes 1 from i when i^2 is bigger than x.
+		if (pow(i, 2) > x) {
+			i--;
+		}
+
+		return i;
 	}
 }

@@ -29,8 +29,8 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		str1 = preProcess(str1);
-		str2 = preProcess(str2);
+		str1 = preProcess(str1).replace(" ", "");
+		str2 = preProcess(str2).replace(" ", "");
 		// If the strings' lengths do not match, they are no anagrams and returns false.
 		if (str1.length() != str2.length()) {
 			return false;
@@ -52,7 +52,7 @@ public class Anagram {
 	// which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
-		return str.toLowerCase().replaceAll("[^a-zA-Z]", "");
+		return str.toLowerCase().replaceAll("[^ a-zA-Z]", "");
 	}
 
 	// Returns a random anagram of the given string. The random anagram consists of
