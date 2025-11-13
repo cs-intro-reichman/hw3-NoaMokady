@@ -27,11 +27,17 @@ public class Anagram {
 		System.out.println(pass ? "test passed" : "test Failed");
 	}
 
+	// Returns the string without the character in the given index.
+	public static String removeChar(String str, int index) {
+		return str.substring(0, index) + str.substring(index + 1);
+	}
+
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
+		// Convert strings to lower case letters and removes spaces.
 		str1 = preProcess(str1).replace(" ", "");
 		str2 = preProcess(str2).replace(" ", "");
-		// If the strings' lengths do not match, they are no anagrams and returns false.
+		// If the strings' lengths do not match, they are not anagrams and returns false.
 		if (str1.length() != str2.length()) {
 			return false;
 		}
@@ -41,23 +47,22 @@ public class Anagram {
 			if (index == -1) {
 				return false;
 			}
-			str2 = str2.substring(0, index) + str2.substring(index + 1);
+			// Removes the letter in the given index from the string.
+			str2 = removeChar(str2, index);
 		}
 		return true;
 	}
 
 	// Returns a preprocessed version of the given string: all the letter characters
-	// are converted
-	// to lower-case, and all the other characters are deleted, except for spaces,
-	// which are left
-	// as is. For example, the string "What? No way!" becomes "whatnoway"
+	// are converted to lower-case, and all the other characters are deleted, except 
+	// for spaces, which are left as is. For example, the string "What? No way!" 
+	// becomes "what no way"
 	public static String preProcess(String str) {
 		return str.toLowerCase().replaceAll("[^ a-zA-Z]", "");
 	}
 
 	// Returns a random anagram of the given string. The random anagram consists of
-	// the same
-	// characters as the given string, re-arranged in a random order.
+	// the same characters as the given string, re-arranged in a random order.
 	public static String randomAnagram(String str) {
 		String anagram = "";
 		while (str.length() != 0) {
@@ -65,7 +70,7 @@ public class Anagram {
 			anagram += str.charAt(i);
 			// Removes the character that was added to the anagram from the given string to
 			// avoid duplication.
-			str = str.substring(0, i) + str.substring(i + 1);
+			str = removeChar(str, i);
 		}
 		return anagram;
 	}

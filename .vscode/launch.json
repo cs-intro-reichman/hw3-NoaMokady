@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Algebra",
+            "request": "launch",
+            "mainClass": "Algebra",
+            "projectName": "hw3-NoaMokady_48ac5eac"
+        },
+        {
+            "type": "java",
             "name": "TestAnagram",
             "request": "launch",
             "mainClass": "TestAnagram",

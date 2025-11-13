@@ -73,6 +73,7 @@ public class Algebra {
 		if (n == 0) {
 			return 1;
 		}
+
 		int result = x;
 		for (int i = 0; i < n - 1; i++) {
 			result = times(result, x);
@@ -96,7 +97,7 @@ public class Algebra {
 			x1 = minus(x1, x2);
 			result++;
 		}
-		return result * sign;
+		return times(result, sign);
 	}
 
 	// Returns x1 % x2
@@ -114,7 +115,7 @@ public class Algebra {
 			i++;
 		}
 
-		// Removes 1 from i when i^2 is bigger than x.
+		// Removes 1 from i when i^2 is bigger than x
 		if (pow(i, 2) > x) {
 			i--;
 		}
